@@ -28,13 +28,9 @@ class App extends Component {
     }
 
     inputTextDeleteCharHandler = (index) => {
-        console.log(index);
         const charArray = this.state.text.split('');
-        console.log(charArray);
         charArray.splice(index, 1);
-        console.log(charArray);
         const updatedText = charArray.join('');
-        console.log(updatedText);
         this.setState({text: updatedText});
     }
 
