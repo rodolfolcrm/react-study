@@ -9,7 +9,30 @@ import './UserOutput/UserOutput.css';
 import './UserInput/UserInput.css';
 import './Char/Char.css';
 
+/**
+ * StateFull component sample.
+ */
 class App extends Component {
+
+    //React lifecycle hooks. Used for study proposal
+    constructor(props){
+        super(props);
+        console.log('[App] inside constructor', props)
+    }
+
+    componentWillMount(){
+        console.log('[App] inside componentWillMount()');
+    }
+
+    componentDidMount(){
+        console.log('[App] inside componentDidMount()');
+    }
+
+    componentWillUnmount(){
+        console.log('[App] inside componentWillUnmount()');
+    }
+
+    //StateFull component can access state.
     state = {
         users: [
             {username: 'Rodolfo', age: 34}
@@ -35,6 +58,8 @@ class App extends Component {
     }
 
     render() {
+        console.log('[App] inside render()');
+
         let charList = this.state.text.split('').map((c, index) => {
             return <Char
                 key={index}
